@@ -4,6 +4,10 @@
 <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 <title>ruesoft.com</title>
 <style>
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: Microsoft;
   src: url('msyi.ttf');
@@ -13,13 +17,24 @@ body {
   background-color: #101010;
   color: #ff5b00;
   font-family: Microsoft;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .content {
   max-width: 500px;
   margin: auto;
   padding: 10px;
+}
+
+.header {
+  padding: 18px;
+  font-size: 18px;
+  text-align: center;
+  background: #101010;
+}
+
+h4 {
+  text-align: right;
 }
 
 a:link
@@ -35,12 +50,69 @@ a:active
 </head>
 <body>
 <div class="content">
-<p><a href="https://ruesoft.com/">/home</a></p>
-<p><b>Windows reinstall and setup [21.01.2025]</b></p>
 
-<p>i forgot to document my steps so this log is still work in progress :( </p>
+<a href="https://ruesoft.com/">home</a>
 
-<p></p>
+<h2>Format C and D drives and reinstall Windows 11</h2>
+
+<details>
+  <summary>
+     <i>overview:</i>
+  </summary>
+  <ol>
+    <li><p>format hard drive D</p></li>
+    <li><p>create windows usb bootable</p></li>
+    <li><p>format hard drive C</p></li>
+        <ul>
+<li>Boot pc with the flash drive
+<li>Select language and click "Next."
+<li>Select "Repair your computer"
+<li>Select "Troubleshoot" > "Advanced options" > "Command Prompt"
+<li>Type diskpart and press Enter.
+<li>Type list volume to see all drives and their letters.
+<li>Type select volume X (replace X with the volume number or letter of the C drive).
+<li>Type format fs=ntfs quick (or format fs=exfat quick if you prefer that filesystem) and press Enter.
+<li>Type exit and close command prompt
+        </ul>
+    <li><p>install windows</p></li>
+  </ol>
+</details>
+
+<br>
+<p>right click on local disk D, then "Format..."</p>
+<img src="1.png" width="500">
+<p>choose if u want a quick or a full format in "Format options". I opted for full and it took me about 8 hours for my 3TB hard drive so choose wisely</p>
+<p>u cant format your C drive this way as it has windows running on it. Insert 8gb usb flash drive & download <a href="https://www.microsoft.com/en-us/software-download/windows11">media creation tool</a></p>
+<img src="2.png" width="500">
+<p>choose language and edition, then go with a usb flash drive option. It will erase everything on the drive, care</p>
+<img src="3.png" width="500">
+<p>drive should look like this</p>
+<img src="4.png" width="500">
+<p>now is a good time to find out whats your windows product key as we will fully empty all the information from our hard drives. I didn't do that and just went with the "I don't have a product key" options and it went fine
+<p>restart your computer and boot up bios. U need to spam the correct button while windows is loading, usually its smth like F2, F12 or DEL
+<p><img src="5.jpg" width="500"></p>
+<p>my bios looks this way. In the left bottom corner u can see "Boot Sequence". U need to change the order your computer boots your drives, currently, it prioritize disk C and u need to make your flash drive the top priority. Should be done in a few clicks, save and exit after that
+<p>u should be greeted with windows 11 setup, get to "Select setup option" and choose "Repair my PC"</p>
+<p><img src="6.jpg" width="500"></p>
+<p>choose keyboard layout and u should end up in this menu where u need to click "Troubleshoot" and then "Command Prompt"</p>
+<p><img src="7.jpg" width="500"></p>
+<p>in command prompt type "list volume". U will see more volumes than the amount of hard drives u have, just focus on the ones with the size in GB. Define your C drive, mine is clearly volume 0</p>
+<p><img src="8.jpg" width="500"></p>
+<p>type "select volume 0", yours might not be 0, check. Then type "format fs=ntfs" for full format or "format fs=ntfs quick" for a quick one
+<p><img src="9.jpg" width="500"></p>
+<p>disk C formatted, type "exit" and close the command prompt with your mouse cursor. In "choose an option" menu pick "Continue".
+<p><img src="10.jpg" width="500"></p>
+<p>choose language and congratz, now u can pick "Install Windows 11" option O
+<p><img src="11.jpg" width="500"></p>
+<p>opt for Windows 11 Pro and select the partition with apropriate amount of GB a disk C would have. After some installation i got greeted with this error message. I removed the flash drive with media creation tool and clicked "Yes"
+<p><img src="12.jpg" width="500"></p>
+<p>sucsexs
+<p><img src="13.jpg" width="500"></p>
+<a href="https://discord.com/channels/1193926840998445259/1217518058546008156">join discord devlog discussion channel</a>
+
+<div class="header">
+  ruesoft.com
+</div>
 </div>
 
 </body>

@@ -7,47 +7,43 @@
   box-sizing: border-box;
 }
 
+a:link
+{color: #ffffff; text-decoration: none;}
+a:visited
+{color: #ffffff; text-decoration: none;}
+a:hover
+{color: #add8e6; text-decoration: none;}
+a:active
+{color: #ffffff; text-decoration: none;}
+
 @font-face {
   font-family: Microsoft;
   src: url('msyi.ttf');
 }
 
-@font-face {
-  font-family: TerminaTest;
-  src: url('TerminaTest-Thin.ttf');
-}
-
 /* Add a gray background color with some padding */
 body {
-  background-color: #101010;
-  color: #ff5b00;
-  font-family: Microsoft;
-  font-size: 15px;
+    font-family: Microsoft;
+    font-size: 16px;
   padding: 20px;
+  background: black;
+  color: white;
+  
 }
 
-a:link
-{color: #9acd; text-decoration: none;}
-a:visited
-{color: #9acd; text-decoration: none;}
-a:hover
-{color: #add8e6; text-decoration: none;}
-a:active
-{color: #101010; text-decoration: none;}
-
 .content {
-  max-width: 700px;
+  max-width: 1200px;
   margin: auto;
   padding: 5px;
-  padding-bottom: 5px
+  padding-bottom: 0px
 }
 
 /* Header/Blog Title */
 .header {
-  padding: 18px;
-  font-size: 18px;
+  padding: 30px;
+  font-size: 40px;
   text-align: center;
-  background: #101010;
+  background: white;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -61,22 +57,14 @@ a:active
 .rightcolumn {
   float: left;
   width: 25%;
-  padding-left: 18px;
-  text-align: center;
-}
-
-/* Fake image */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 18px;
+  padding-left: 20px;
 }
 
 /* Add a card effect for articles */
 .card {
-   background-color: #00000020;
-   padding: 18px;
-   margin-top: 18px;
+   background-color: black;
+   padding: 20px;
+   margin-top: 0px;
 }
 
 /* Clear floats after the columns */
@@ -88,17 +76,14 @@ a:active
 
 /* Footer */
 .footer {
-  padding: 18px;
-  margin-top: 18px;
-  font-size: 5px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.calendar {
-  font-size: 9px;
-}
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
+  .rightcolumn, .leftcolumn {   
     width: 100%;
     padding: 0;
   }
@@ -107,53 +92,65 @@ a:active
 </head>
 <body>
 <div class="content">
-
-<div class="header">
-  <a href="https://ruesoft.com/">updates</a> / <a href="logs/logs.html">logs</a> / guidebook / lore / download / bio / <a href="https://linktr.ee/ruesoft">linktree</a>
-</div>
-
 <div class="row">
   <div class="leftcolumn">
     <div class="card">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <h5>21/02/25</h5>
+      <img src="World.png" style="height:250px;">
+      <p><i>right click -> open image in new tab</i></p>
+      <p>lore sketch</p>
     </div>
     <div class="card">
-      <p></p>
-      <p>[05.02.2025]</p>
-      <img src="Wallpaper.png" height="200">
-      <p>[05.02.2025]</p>
-      <p>1v1mp / psx / ue5 lyra / dev / blogs & vlogs / streaming</p>
+      <h5>16/02/25</h5>
+      <img src="WhiteUI.png" style="height:250px;">
+      <img src="WhiteMap.png" style="height:250px;">
+      <p><i>right click -> open image in new tab</i></p>
+      <p>1v1mp sketches</p>
+    </div>
+    <div class="card">
+      <h5>06/02/25</h5>
+      <p>work under devlogs has been started</p>
+      <p>Format C and D drives + Windows reinstall has been uploaded</p>
+      <p>Clean Windows 11 setup / debloat has been uploaded</p>
+      <p>Free static site host [GitHub Pages / Sevalla] has been uploaded</p>
+      <p>Visual Studio 2022 for UE5 setup has been uploaded</p>
+    </div>
+    <div class="card">
+      <h5>30/01/25</h5>
+      <img src="Welcome.png" style="height: 50px;">
+      <p>ruesoft.com init</p>
+      <p>Off topic log about colors has been uploaded - picking degrees from the color wheel for emotions</p>
     </div>
   </div>
   <div class="rightcolumn">
     <div class="card">
-      <p>welcome to<br> rueful software :(</p>
-      <div><img src="rue.png" width="100""></div>
-      <p>1v1mp / psx <br>ue5 lyra / dev <br> blogs & vlogs streaming</p>
+      <img src="ruelogo.png" style="height:80px;">
     </div>
     <div class="card">
-      <p>last uploads</p>
-      <div><img src="upload1.png" width="100""></div><br>
-      <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div>
+        <ul>
+        <li><a href="logs/logs.html">logs</a><br>
+        <li><a href="">guidebook</a><br>
+        <li><a href="">bio</a><br>
+        <li><a href="https://linktr.ee/ruesoft">linktree</a><br>
+        <li><a href="">google disk playtest download</a>
+        </ul>
     </div>
     <div class="card">
       <p>last update</p>
-      <pre class="calendar">01 / 02 / 03 / 04 / 05
+        <pre style="font-size: 12px;">
+01 / 02 / 03 / 04 / 05
 06 / 07 / 08 / 09 / 10
 11 / 12 / 13 / 14 / 15
 16 / 17 / 18 / 19 / 20
 21 / 22 / 23 / 24 / 25
-26 / 27 / 28 / 29</pre>
+26 / 27 / 28 / 29
+        </pre>
     </div>
   </div>
 </div>
-<div class="header">
-  ruesoft.com
+
+<div class="footer">
+  <h2>ruesoft.com</h2>
 </div>
 </div>
 </body>
